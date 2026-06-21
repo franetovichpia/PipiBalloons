@@ -1,0 +1,33 @@
+/* ============================================
+   VARIABLES.CSS
+   Tokens de diseño: colores, tipografías, sombras.
+   Cambiar acá impacta en toda la página.
+============================================ */
+
+:root{
+  /* Paleta de colores */
+  --cream:#FBF5EF;       /* fondo general */
+  --blush:#F3DCD6;       /* rosa claro / fondos suaves */
+  --rose:#C98179;        /* rosa medio / hover */
+  --rose-deep:#A85C54;   /* rosa fuerte / botones y acentos */
+  --mauve:#6B4A45;       /* texto de títulos */
+  --gold:#D9B27C;        /* dorado / detalles */
+  --white:#FFFFFF;
+  --ink:#4A3530;         /* texto general */
+  --ink-soft:#6B5450;    /* texto secundario */
+
+  /* Tipografías */
+  --font-display:'Playfair Display', serif;
+  --font-body:'Jost', sans-serif;
+  --font-script:'Caveat', cursive;
+
+  /* Sombras */
+  --shadow: 0 12px 30px -10px rgba(107,74,69,0.25);
+  --shadow-lg: 0 16px 34px -10px rgba(168,92,84,0.4);
+
+  /* Layout */
+  --max-width: 1180px;
+  --radius-sm: 18px;
+  --radius-md: 24px;
+  --radius-pill: 40px;
+}

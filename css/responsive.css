@@ -1,0 +1,82 @@
+/* ============================================
+   RESPONSIVE.CSS
+   Media queries agrupadas por breakpoint.
+   Mobile-first NO se usa acá: el diseño base
+   es desktop y se ajusta hacia abajo.
+============================================ */
+
+/* ===== Tablets grandes / hero y nav ===== */
+@media (max-width:920px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding-top:130px;
+  }
+  .hero-text{
+    max-width:100%;
+  }
+  .hero-text p{
+    margin:0 auto 28px;
+  }
+  .btn-row{
+    justify-content:center;
+  }
+  .arch-frame{
+    width:300px;
+    height:440px;
+  }
+  .hero-visual img.bear{
+    width:230px;
+  }
+  .hero-visual{
+    height:460px;
+  }
+}
+
+/* ===== Tablets / nav y galería ===== */
+@media (max-width:880px){
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:220px;
+  }
+  .gallery-grid figure:nth-child(1),
+  .gallery-grid figure:nth-child(4){
+    grid-row:span 1;
+  }
+  .cat-grid{
+    grid-template-columns:1fr;
+  }
+  .pasos{
+    grid-template-columns:repeat(2,1fr);
+    row-gap:40px;
+  }
+}
+
+/* ===== Mobile / nav links y about ===== */
+@media (max-width:780px){
+  .nav-links{
+    display:none;
+  }
+  .nav-cta{
+    font-size:0.8rem;
+    padding:9px 16px;
+  }
+}
+
+@media (max-width:680px){
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+}
+
+/* ===== Mobile chico / galería y pasos ===== */
+@media (max-width:540px){
+  .gallery-grid{
+    grid-template-columns:1fr;
+    grid-auto-rows:260px;
+  }
+  .pasos{
+    grid-template-columns:1fr;
+  }
+}

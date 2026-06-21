@@ -1,0 +1,82 @@
+/* ============================================
+   BASE.CSS
+   Reset, tipografía general y utilidades base.
+============================================ */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:var(--font-body);
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+h1, h2, h3{
+  font-family:var(--font-display);
+  font-weight:600;
+  color:var(--mauve);
+  letter-spacing:0.2px;
+}
+
+.script{
+  font-family:var(--font-script);
+  font-weight:700;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+ul{
+  list-style:none;
+}
+
+/* Contenedor centrado reutilizable */
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* Texto pequeño tipo "etiqueta" sobre los títulos */
+.eyebrow{
+  font-family:var(--font-script);
+  font-size:1.5rem;
+  color:var(--rose-deep);
+  font-weight:700;
+  display:block;
+  margin-bottom:4px;
+}
+
+/* Accesibilidad: foco visible para teclado */
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid var(--rose-deep);
+  outline-offset:3px;
+}
+
+/* Animaciones reducidas si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce){
+  .fade-up,
+  .hero-visual img.bear{
+    transition:none;
+    animation:none;
+    opacity:1;
+    transform:none;
+  }
+}

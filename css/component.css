@@ -1,0 +1,236 @@
+/* ============================================
+   COMPONENTS.CSS
+   Piezas reutilizables: botones, cards de
+   catálogo, items de galería, pasos del
+   proceso y botón flotante de WhatsApp.
+============================================ */
+
+/* ===== BOTONES ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:15px 30px;
+  border-radius:var(--radius-pill);
+  font-size:1rem;
+  font-weight:500;
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+
+.btn-row{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--rose-deep);
+  color:var(--white);
+  box-shadow:var(--shadow);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lg);
+}
+
+.btn-ghost{
+  border:1.5px solid var(--rose-deep);
+  color:var(--rose-deep);
+}
+.btn-ghost:hover{
+  background:rgba(168,92,84,0.08);
+}
+
+.btn-white{
+  background:#fff;
+  color:var(--rose-deep) !important;
+}
+.btn-white:hover{
+  background:var(--blush);
+}
+
+.btn-outline-light{
+  border:1.5px solid #E8D6D0;
+  color:#fff !important;
+}
+.btn-outline-light:hover{
+  background:rgba(255,255,255,0.08);
+}
+
+.nav-cta{
+  background:var(--rose-deep);
+  color:var(--white) !important;
+  padding:10px 22px;
+  border-radius:30px;
+  font-size:0.9rem;
+  font-weight:500;
+  box-shadow:var(--shadow);
+  transition:transform .2s, background .2s;
+  white-space:nowrap;
+}
+.nav-cta:hover{
+  background:var(--rose);
+  transform:translateY(-1px);
+}
+
+/* ===== GALERÍA - ITEMS ===== */
+.gallery-grid figure{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius-sm);
+  margin:0;
+  box-shadow:var(--shadow);
+}
+
+.gallery-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+
+.gallery-grid figure:hover img{
+  transform:scale(1.07);
+}
+
+.gallery-grid figcaption{
+  position:absolute;
+  bottom:0; left:0; right:0;
+  padding:16px 18px;
+  background:linear-gradient(180deg, transparent, rgba(74,53,48,0.75));
+  color:#fff;
+  font-size:0.9rem;
+  opacity:0;
+  transition:opacity .3s;
+}
+
+.gallery-grid figure:hover figcaption{
+  opacity:1;
+}
+
+/* ===== CATÁLOGO - CARDS ===== */
+.cat-card{
+  background:var(--cream);
+  border-radius:var(--radius-md);
+  padding:34px 32px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  border:1px solid rgba(107,74,69,0.06);
+}
+
+.cat-card .badge{
+  position:absolute;
+  top:-14px; left:28px;
+  background:var(--gold);
+  color:var(--white);
+  font-size:0.78rem;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:600;
+  letter-spacing:0.4px;
+  box-shadow:0 6px 14px -4px rgba(217,178,124,0.6);
+}
+
+.cat-card h3{
+  font-size:1.4rem;
+  margin:10px 0 8px;
+}
+
+.cat-card .price-tag{
+  font-size:0.92rem;
+  color:var(--rose-deep);
+  font-weight:600;
+  margin-bottom:14px;
+}
+
+.cat-card ul{
+  margin:0 0 26px;
+  flex-grow:1;
+}
+
+.cat-card li{
+  font-size:0.95rem;
+  color:var(--ink-soft);
+  padding-left:26px;
+  position:relative;
+  margin-bottom:10px;
+  line-height:1.45;
+}
+
+.cat-card li::before{
+  content:"✦";
+  position:absolute;
+  left:0; top:0;
+  color:var(--rose-deep);
+  font-size:0.85rem;
+}
+
+.cat-cta{
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--rose-deep);
+  color:#fff;
+  padding:12px 24px;
+  border-radius:30px;
+  font-size:0.92rem;
+  font-weight:500;
+  transition:transform .2s, background .2s;
+}
+.cat-cta:hover{
+  background:var(--rose);
+  transform:translateY(-2px);
+}
+
+/* ===== PROCESO - PASOS ===== */
+.paso .circle{
+  width:64px; height:64px;
+  border-radius:50%;
+  background:var(--white);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 18px;
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.3rem;
+  color:var(--rose-deep);
+  box-shadow:var(--shadow);
+}
+
+/* ===== BOTÓN FLOTANTE DE WHATSAPP ===== */
+.wa-float{
+  position:fixed;
+  bottom:24px; right:24px;
+  z-index:200;
+  background:#25D366;
+  width:58px; height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 24px -6px rgba(0,0,0,0.35);
+  transition:transform .2s;
+}
+.wa-float:hover{
+  transform:scale(1.08);
+}
+.wa-float svg{
+  width:28px;
+  height:28px;
+  fill:#fff;
+}
+
+/* ===== ANIMACIÓN FADE-UP AL SCROLLEAR ===== */
+.fade-up{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.fade-up.in{
+  opacity:1;
+  transform:translateY(0);
+}
