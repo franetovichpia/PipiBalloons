@@ -389,3 +389,56 @@ footer .foot-links{
   height: 45px;
   object-fit: contain;
 }
+
+/* ==========================================================================
+     GALERÍA MASONRY (Estilo Pinterest adaptable)
+     ========================================================================== */
+  .gallery {
+    padding: 60px 0;
+    background-color: #fafafa;
+  }
+
+  .galeria-masonry {
+    /* Define la cantidad de columnas según el espacio disponible */
+    column-count: 3;
+    column-gap: 20px;
+    padding: 10px 0;
+  }
+
+  .galeria-masonry .card {
+    background: #ffffff;
+    border-radius: 16px; /* Bordes redondeados más suaves */
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px; /* Separación vertical entre fotos */
+    display: inline-block; /* Evita que la tarjeta se parta entre columnas */
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .galeria-masonry .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .galeria-masonry .card img {
+    width: 100% !important;
+    height: auto !important; /* Permite que la foto mantenga su proporción original completa */
+    display: block;
+    object-fit: contain !important; 
+  }
+
+  /* Responsive: Ajuste para pantallas medianas (Tablets) */
+  @media (max-width: 900px) {
+    .galeria-masonry {
+      column-count: 2;
+    }
+  }
+
+  /* Responsive: Ajuste para pantallas chicas (Celulares) */
+  @media (max-width: 600px) {
+    .galeria-masonry {
+      column-count: 1;
+      column-gap: 0;
+    }
+  }

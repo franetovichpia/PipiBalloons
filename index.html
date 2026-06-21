@@ -10,18 +10,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Hojas de estilo base -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 
+  <!-- Estilos Unificados para Catálogo Eficiente y Galería Dinámica -->
   <style>
-    /* Estructura general de grillas */
+    /* Estructura Base obligatoria */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      box-sizing: border-box;
     }
     
     .section-head {
@@ -29,37 +32,46 @@
       margin-bottom: 40px;
     }
 
-    /* Grilla de Galería Anti-superposición */
-    .galeria-grid {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-      gap: 25px !important;
-      padding: 20px 0;
+    /* ==========================================================================
+       GALERÍA MASONRY (Estilo Pinterest Adaptable)
+       ========================================================================== */
+    .gallery {
+      padding: 60px 0;
+      background-color: #fafafa;
     }
 
-    .card {
+    .galeria-masonry {
+      column-count: 3;
+      column-gap: 20px;
+      padding: 10px 0;
+    }
+
+    .galeria-masonry .card {
       background: #ffffff;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      display: inline-block;
+      width: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card img {
+    .galeria-masonry .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .galeria-masonry .card img {
       width: 100% !important;
-      height: 250px !important;
-      object-fit: cover !important;
+      height: auto !important;
       display: block;
+      object-fit: contain !important; 
     }
 
-    .card h3 {
-      padding: 15px;
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 0;
-      color: #333;
-    }
-
-    /* Grilla y Tarjetas del Catálogo */
+    /* ==========================================================================
+       CATÁLOGO DE SERVICIOS (Formato Tarjetas Alineadas)
+       ========================================================================== */
     .catalogo {
       padding: 60px 0;
       background-color: #ffffff;
@@ -147,6 +159,20 @@
     .servicio-card .btn:hover {
       background: #e07a9b !important;
     }
+
+    /* Media Queries para comportamiento Responsivo de la Galería */
+    @media (max-width: 900px) {
+      .galeria-masonry {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .galeria-masonry {
+        column-count: 1;
+        column-gap: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -169,6 +195,7 @@
 
 <main id="top">
 
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <span class="eyebrow">Globología para cumpleaños y eventos</span>
@@ -188,6 +215,7 @@
     </div>
   </section>
 
+  <!-- ABOUT STRIP -->
   <section class="about">
     <div class="container about-grid fade-up">
       <div>
@@ -205,6 +233,7 @@
     </div>
   </section>
 
+  <!-- GALERÍA ESTILO PINTEREST -->
   <section class="gallery" id="galeria">
     <div class="container">
       <div class="section-head fade-up">
@@ -212,40 +241,35 @@
         <p>Cada evento, una escena distinta</p>
       </div>
 
-      <div class="galeria-grid">
+      <div class="galeria-masonry">
         <div class="card fade-up">
-          <img src="images/portfolio-1.jpg" alt="Arco rosa viejo y dorado">
-          <h3>Arco rosa viejo & dorado — Cumple 50</h3>
+          <img src="images/portfolio-1.jpg" alt="Arco orgánico de globos verdes, blancos y dorados con oso de peluche">
         </div>
 
         <div class="card fade-up">
-          <img src="images/portfolio-2.jpg" alt="Arco arcoíris rosa y lila">
-          <h3>Arco arcoíris rosa & lila</h3>
+          <img src="images/portfolio-2.jpg" alt="Gran arco orgánico de globos rosas y lilas">
         </div>
 
         <div class="card fade-up">
-          <img src="images/portfolio-3.jpg" alt="Verde y dorado con candy bar">
-          <h3>Verde & dorado con candy bar</h3>
+          <img src="images/portfolio-3.jpg" alt="Decoración temática de abejita con globos morados y amarillos">
         </div>
 
         <div class="card fade-up">
-          <img src="images/portfolio-4.jpg" alt="Durazno y dorado con neón">
-          <h3>Durazno & dorado con neón</h3>
+          <img src="images/portfolio-4.jpg" alt="Centro de mesa con jirafa de peluche y globos selva">
         </div>
 
         <div class="card fade-up">
-          <img src="images/portfolio-5.jpg" alt="Temática abejita">
-          <h3>Temática abejita</h3>
+          <img src="images/portfolio-5.jpg" alt="Fondo blanco con arco de globos rosa viejo y oro cromado">
         </div>
 
         <div class="card fade-up">
-          <img src="images/portfolio-6.jpg" alt="Centro de mesa jungla">
-          <h3>Centro de mesa jungla</h3>
+          <img src="images/portfolio-6.jpg" alt="Arco de globos pastel con cartel luminoso de feliz cumpleaños">
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CATÁLOGO -->
   <section class="catalogo" id="catalogo">
     <div class="container">
       <div class="section-head fade-up">
@@ -255,6 +279,7 @@
       </div>
 
       <div class="catalogo-grid">
+        <!-- CARD 1 -->
         <div class="servicio-card fade-up">
           <span class="badge">Más pedido</span>
           <h3>Arco orgánico de globos</h3>
@@ -269,6 +294,7 @@
           <a class="cat-cta btn" href="https://wa.me/15559002435?text=Hola%20Pipi!%20Quiero%20cotizar%20un%20Arco%20org%C3%A1nico%20de%20globos." target="_blank" rel="noopener">Consultar precio →</a>
         </div>
 
+        <!-- CARD 2 -->
         <div class="servicio-card fade-up">
           <span class="badge">Temático</span>
           <h3>Backdrop temático infantil</h3>
@@ -283,6 +309,7 @@
           <a class="cat-cta btn" href="https://wa.me/15559002435?text=Hola%20Pipi!%20Quiero%20cotizar%20un%20Backdrop%20tem%C3%A1tico%20infantil." target="_blank" rel="noopener">Consultar precio →</a>
         </div>
 
+        <!-- CARD 3 -->
         <div class="servicio-card fade-up">
           <span class="badge">Centros de mesa</span>
           <h3>Centro de mesa con peluche</h3>
@@ -297,6 +324,7 @@
           <a class="cat-cta btn" href="https://wa.me/15559002435?text=Hola%20Pipi!%20Quiero%20cotizar%20Centros%20de%20mesa%20con%20peluche." target="_blank" rel="noopener">Consultar precio →</a>
         </div>
 
+        <!-- CARD 4 -->
         <div class="servicio-card fade-up">
           <span class="badge">Elegante</span>
           <h3>Pack cumple 15 / 50 / aniversario</h3>
@@ -314,6 +342,7 @@
     </div>
   </section>
 
+  <!-- PROCESO -->
   <section class="proceso" id="proceso">
     <div class="container">
       <div class="section-head fade-up">
@@ -345,10 +374,12 @@
     </div>
   </section>
 
+  <!-- CITA -->
   <section class="cita">
     <blockquote class="fade-up">"Cada globo cuenta una historia distinta — la tuya."</blockquote>
   </section>
 
+  <!-- CONTACTO -->
   <section class="contacto" id="contacto">
     <div class="container">
       <h2 class="fade-up">¿Lista para decorar tu próximo evento?</h2>
@@ -381,4 +412,3 @@
 <script src="js/main.js"></script>
 </body>
 </html>
-
