@@ -15,6 +15,139 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Estructura general de grillas */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .section-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Grilla de Galería Anti-superposición */
+    .galeria-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+      gap: 25px !important;
+      padding: 20px 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .card img {
+      width: 100% !important;
+      height: 250px !important;
+      object-fit: cover !important;
+      display: block;
+    }
+
+    .card h3 {
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0;
+      color: #333;
+    }
+
+    /* Grilla y Tarjetas del Catálogo */
+    .catalogo {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+
+    .catalogo-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+      gap: 30px !important;
+      margin-top: 40px !important;
+      padding: 0;
+    }
+
+    .servicio-card {
+      background: #ffffff !important;
+      padding: 35px 25px !important;
+      border-radius: 14px !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07) !important;
+      text-align: left !important;
+      display: flex !important;
+      flex-direction: column !important;
+      position: relative !important;
+      border: 1px solid #f0f0f0 !important;
+      box-sizing: border-box;
+    }
+
+    .servicio-card .badge {
+      align-self: flex-start !important;
+      background: #fff0f3 !important;
+      color: #ff8fb1 !important;
+      font-size: 0.75rem !important;
+      font-weight: 600 !important;
+      padding: 5px 12px !important;
+      border-radius: 20px !important;
+      margin-bottom: 14px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      display: inline-block;
+    }
+
+    .servicio-card h3 {
+      margin: 0 0 8px 0 !important;
+      font-family: 'Playfair Display', serif !important;
+      font-size: 1.45rem !important;
+      color: #222 !important;
+      line-height: 1.2;
+    }
+
+    .servicio-card .price-tag {
+      font-size: 0.9rem !important;
+      color: #888 !important;
+      margin-bottom: 22px !important;
+      font-weight: 400;
+    }
+
+    .servicio-card ul {
+      padding-left: 18px !important;
+      margin: 0 0 30px 0 !important;
+      flex-grow: 1 !important;
+      list-style-type: disc !important;
+    }
+
+    .servicio-card ul li {
+      margin-bottom: 10px !important;
+      font-size: 0.95rem !important;
+      color: #555 !important;
+      line-height: 1.45 !important;
+      display: list-item !important;
+    }
+
+    .servicio-card .btn {
+      display: block !important;
+      text-align: center !important;
+      padding: 12px 15px !important;
+      background: #ff8fb1 !important;
+      color: #ffffff !important;
+      border-radius: 8px !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+      font-size: 0.95rem !important;
+      margin-top: auto !important;
+      transition: background 0.3s ease;
+    }
+
+    .servicio-card .btn:hover {
+      background: #e07a9b !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -248,3 +381,4 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
