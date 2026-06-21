@@ -383,3 +383,9 @@ footer .foot-links{
   font-size: 1.1rem;
   color: #333;
 }
+
+.whatsapp-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
